@@ -2,16 +2,27 @@
 <html>
     <head>
         <title>Build-a-Blog</title>
-        <div class='nav'>
+        <p>
             <a href='/blog'>Main Blog Page</a>
-        </div>
-        <div class='nav'>
+        </p>
+        <p>
             <a href='/newpost'>New Blog Post</a>
-        </div>
+        </p>
+
+        <style>
+            .error {
+                color: red;
+                }
+            .title {
+                padding: 5px;
+            }
+            .entry {
+                padding: 5px;
+            }
+        </style>
     </head>
 
 <body>
-    <h1 align="center">Build-a-Blog</h1>
 
     {% block content %}
     {% endblock %}

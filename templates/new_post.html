@@ -2,25 +2,36 @@
 
 {% block content %}
     <h1 align="center">Add a Blog Entry</h1>
-    <form method='post'>
-        <label>
-            <div class='title'>
-                New Blog Title:
-            </div>
-            <input type='text' name='title' value='{{title}}' />
-        </label>
-
-        <label>
-            <div class='entry'>
-                New Blog Post:
-            </div>
-            <textarea name='new_entry' value='{{new_entry}}'></textarea>
-        </label>
-
-        <div class='error'>
-            {{error}}
-        </div>
-        <input type='submit' value='Add entry' />
+    <form action='/newpost' method='post'>
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        <div class='title'>
+                            New Blog Title:
+                        </div>
+                        <input type='text' name='title' value='{{title}}' />
+                        <span class='error'>{{title_error}}</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <div class='body'>
+                            New Blog Post:
+                        </div>
+                        <textarea name='body' value='{{body}}' rows='4' cols='25'></textarea>
+                        <span class='error'>{{post_error}}</span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type='submit' value='Add Entry' />
+                </td>
+            </tr>
+        </table>
     </form>
 
 {% endblock %}
